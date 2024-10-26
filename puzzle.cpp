@@ -10,9 +10,9 @@
 
 using namespace std;
 
-int grid[6][6];
-
 const int MAX_ATTEMPT_SECONDS = 10;
+
+int grid[6][6];
 
 const pair<int, int> a_coords[12] = {
     {0, 0}, {1, 0}, {2, 0}, {2, 1}, {3, 0}, {3, 1},
@@ -138,7 +138,6 @@ int main() {
   for (int a = 1; a <= 47; a++) {
     for (int b = 1; b <= 47; b++) {
       for (int c = 1; c <= 47; c++) {
-        if (a + b + c > 13) continue;
         if (a + b + c > best_total) continue;
         if (a == b || a == c || b == c) continue;
         fill_grid(a, b, c);
