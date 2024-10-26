@@ -153,7 +153,7 @@ int main() {
           dfs(0, 0, a, 0, visited, 5, 5, trip_2_result, start_time);
         }
 
-        if ((trip_1_result && trip_2_result) && ((a + b + c) < best_total)) {
+        if (trip_1_result && trip_2_result) {
           best_a = a;
           best_b = b;
           best_c = c;
