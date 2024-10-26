@@ -102,14 +102,15 @@ void dfs(const int row, const int col, int prev, int score,
   time_t time_taken = time(NULL) - start_time;
   if (time_taken > MAX_ATTEMPT_SECONDS) return;
   if (found) return;
+
   int curr = grid[row][col];
   if (curr == prev) {
     score += curr;
   } else
     score *= curr;
 
-  visited.push_back({row, col});
   if (score > 2024) return;
+  visited.push_back({row, col});
 
   if ((row == goal_row) && (col == goal_col) && (score == 2024)) {
     update_best_journey(visited, goal_row);
